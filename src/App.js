@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import { Schema } from "./components/Schema";
+import Accordion from "./components/Accordion";
+import Search from "./components/Search";
+import PickColor from "./components/PickColor";
+import Translate from "./components/Translate";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+	return (
+		<div className="ui container">
+			<Schema />
+
+			<BrowserRouter>
+				<Header />
+				<Routes>
+					<Route exact path="/" element={<Accordion />} />
+
+					<Route exact path="/list" element={<Search />} />
+
+					<Route exact path="/dropdown" element={<PickColor />} />
+
+					<Route exact path="/translate" element={<Translate />} />
+				</Routes>
+			</BrowserRouter>
+		</div>
+	);
+};
 
 export default App;
