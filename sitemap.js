@@ -7,7 +7,7 @@ const router = require("./src/components/Router").default;
 
 function generateSitemap() {
 	return new Sitemap(router)
-		.build("http://localhost:3000")
+		.build("http://www.vinanmail.com/")
 		.save("./public/sitemap.xml");
 }
 
