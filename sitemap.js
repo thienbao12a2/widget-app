@@ -7,7 +7,7 @@ const router = require("./src/components/Router").default;
 
 function generateSitemap() {
 	return new Sitemap(router)
-		.build("http://www.vinanmail.com/")
+		.build("http://appcuibap.com/")
 		.save("./public/sitemap.xml");
 }
 
