@@ -43,7 +43,7 @@ const Accordian = () => {
 				</div>
 				<div className={`${active} content`}>
 					<p>{item.content}</p>
-					<LinkPreview url={item.video} width="390px" />
+					<LinkPreview url={item.video} width="500px" />
 				</div>
 			</React.Fragment>
 		);
