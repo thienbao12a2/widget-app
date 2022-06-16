@@ -29,6 +29,13 @@ const Accordian = () => {
 
 	const renderedItem = items.map((item) => {
 		const active = items.indexOf(item) === activeIndex ? "active" : "";
+		const customFetcher = async (url: string) => {
+			const response = await fetch(
+				`https://my-rlp-proxy.herokuapp.com/v2?url=${url}`
+			);
+			const json = await response.json();
+			return json.metadata;
+		};
 		return (
 			<React.Fragment key={item.title}>
 				<SuperSEO
@@ -44,7 +51,11 @@ const Accordian = () => {
 				</div>
 				<div className={`${active} content`}>
 					<p>{item.content}</p>
-					<LinkPreview url={item.video} width="500px" />
+					<LinkPreview
+						url={item.video}
+						fetcher={customFetcher}
+						width="500px"
+					/>
 				</div>
 			</React.Fragment>
 		);
