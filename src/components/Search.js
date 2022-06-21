@@ -3,7 +3,7 @@ import wikipedia from "./Wikipedia";
 import { SuperSEO } from "react-super-seo";
 
 const Search = () => {
-	const [term, setTerm] = useState("");
+	const [term, setTerm] = useState("car"); // set default search value
 	const [results, setResult] = useState([]);
 
 	useEffect(() => {
@@ -20,8 +20,10 @@ const Search = () => {
 		};
 
 		if (term && !results.length) {
-			search();
+			// this condition is used to generate search result
+			search(); // for the default value. Note that this only works
 		} else {
+			// if there is a default search value.
 			const timeId = setTimeout(() => {
 				if (term) {
 					search();
@@ -31,6 +33,7 @@ const Search = () => {
 				clearTimeout(timeId);
 			};
 		}
+		// eslint-disable-next-line
 	}, [term]);
 
 	const renderedResults = results.map((result) => {

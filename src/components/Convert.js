@@ -30,6 +30,7 @@ const Convert = ({ language, text }) => {
 			setTranslated(data.data.data.translations[0].translatedText);
 		};
 		translate();
+		// eslint-disable-next-line
 	}, [language, debouncedText]);
 
 	return (

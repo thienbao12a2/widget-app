@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { SuperSEO } from "react-super-seo";
-import { LinkPreview } from "@dhaiwat10/react-link-preview";
-
+import { LinkPreview } from "bao-react-link-preview";
 const items = [
 	{
 		title: "What is React",
 		content: "React is a front end javascript framework",
-		video: "https://www.youtube.com/watch?v=N3AkSS5hXMA",
+		video: "https://www.youtube.com/watch?v=HNDtcXVo5ow",
 	},
 	{
 		title: "Why use React",
@@ -29,13 +28,13 @@ const Accordian = () => {
 
 	const renderedItem = items.map((item) => {
 		const active = items.indexOf(item) === activeIndex ? "active" : "";
-		const customFetcher = async (url: string) => {
-			const response = await fetch(
-				`https://my-rlp-proxy.herokuapp.com/v2?url=${url}`
-			);
-			const json = await response.json();
-			return json.metadata;
-		};
+		// const customFetcher = async (url: string) => {
+		// 	const response = await fetch(
+		// 		`https://my-rlp-proxy.herokuapp.com/v2?url=${url}`
+		// 	);
+		// 	const json = await response.json();
+		// 	return json.metadata;
+		// };
 		return (
 			<React.Fragment key={item.title}>
 				<SuperSEO
@@ -51,11 +50,7 @@ const Accordian = () => {
 				</div>
 				<div className={`${active} content`}>
 					<p>{item.content}</p>
-					<LinkPreview
-						url={item.video}
-						fetcher={customFetcher}
-						width="500px"
-					/>
+					<LinkPreview url={item.video} />
 				</div>
 			</React.Fragment>
 		);

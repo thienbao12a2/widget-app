@@ -41,6 +41,10 @@ const Dropdown = ({ options, selected, onSelectedChange, label }) => {
 
 	return (
 		<div ref={ref} className="ui form">
+			<SuperSEO
+				title="Pick Color"
+				description="Pick a color that you like"
+			/>
 			<div className="field">
 				<label className="label">{label}</label>
 				<div
