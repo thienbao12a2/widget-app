@@ -5,7 +5,7 @@ const items = [
 	{
 		title: "What is React",
 		content: "React is a front end javascript framework",
-		video: "https://www.youtube.com/watch?v=HNDtcXVo5ow",
+		video: "https://www.youtube.com/watch?v=WDA7OIXXW1U",
 	},
 	{
 		title: "Why use React",

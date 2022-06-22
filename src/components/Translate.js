@@ -19,6 +19,14 @@ const options = [
 ];
 
 const Translate = () => {
+	// constructor (){
+	// 	document.getElementsByTagName("meta")["description"].content = "i am a description";
+	// 	 document.title = "pikachu";
+	// }
+	// componentDidMount() {
+	// 	document.getElementsByTagName("meta")["description"].content = "i am a description";
+	// 	document.title = "pikachu";
+	// }
 	const [language, setLanguage] = useState(options[0]);
 	const [text, setText] = useState("");
 	return (
